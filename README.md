@@ -14,7 +14,9 @@ git clone https://github.com/DoosanRobotics/doosan-robot2.git
 
 동작을 확인합니다.
 
-![Uploading 스크린샷 2025-04-25 오전 1.16.05.png…]()
+---
+<img width="1512" alt="스크린샷 2025-04-25 오전 1 16 05" src="https://github.com/user-attachments/assets/56e7fb3b-ffa8-47b2-b215-148dfd4f78c0" />
 
 
+---
 <img width="1512" alt="스크린샷 2025-04-25 오전 1 16 10" src="https://github.com/user-attachments/assets/75ff0814-82d0-45bc-92e8-d9cf3290489e" />
