@@ -11,8 +11,11 @@ class SimpleRobotRecorder : public rclcpp::Node
 public:
 	SimpleRobotRecorder() : Node("simple_robot_recorder")
 	{
+
+		// using the service name "/system/get_current_pose" <-- ROS2 Service
 		client_ = create_client<dsr_msgs2::srv::GetCurrentPose>("/system/get_current_pose");
 
+		// Create a timer to call the timer_callback function every 10ms
 		timer_ = create_wall_timer(10ms, 
 			std::bind(&SimpleRobotRecorder::timer_callback, this));
 	}
@@ -28,9 +31,10 @@ private:
 		auto request = std::make_shared<dsr_msgs2::srv::GetCurrentPose::Request>();
 		request->space_type = 1;
 
-		auto future = client_->async_send_request(request,
+		client_->async_send_request(request,
 			[this](rclcpp::Client<dsr_msgs2::srv::GetCurrentPose>::SharedFuture future)
 			{
+				// `future` is a shared pointer to the result of the service call
 				auto result = future.get();
 				if (result)
 				{
